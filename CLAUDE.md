@@ -62,12 +62,16 @@ separately flagged that even the *font* choice might still change, so
 treat every color/type decision here as revisit-if-it-doesn't-feel-
 right, not locked-in).
 
-- **Red never touches the logo icon itself** — the icon's gold label
-  stripe is a deliberate brand substitution for the generic red stripe
-  real floppy-disk icons usually have (History item 7 below); reusing
-  red there would undo that specific choice. Red lives only in
-  page-level accents: half the accent bar, one icon fill on the
-  "Prinzipien" cards, the Games-Backlog-Tracker project icon.
+- **Update**: red now *does* touch the logo, in one narrow spot — the
+  corner rivet notches (previously `#2a2a2e` dark gray) were recolored
+  to the studio red `#E2554C`, across `icon-only.svg`, `logo-full.svg`,
+  `logo-footer.svg`, `preview.html`, and all inline copies in
+  `index.html`. This was a deliberate, explicit follow-up request
+  ("ob wir im Logo rot einbauen, gemäss Brandbook") weighed against the
+  history below — the gold label stripe (the icon's *other* would-be-red
+  spot) stays gold; only the rivets moved to red. If red needs to be
+  walked back out of the logo again, revert just the rivet color, not
+  the label stripe.
 - **The accent bar** (`.accent-bar` in `index.html`) is the studio's
   signature motif: one bar, hard-split 50/50 gold/red — same "hard
   split, not a blended gradient" convention Apex Lifter itself uses for
@@ -145,7 +149,7 @@ approximate from memory — copy from the SVG files):
 | Label | `#ece6d8` | Full, unbroken rectangle — see the corner-notch note below. |
 | Label's top accent stripe | `#E2C766` (brand gold) | Deliberate substitution — generic floppy-icon art usually has a red stripe here; gold ties it to the brand instead. Inset 2 units in from the label's own top/left/right edges (`x=10,y=34,w=60,h=6` against a label of `x=8,y=32,w=64,h=44` with a 3-unit border stroke) — **this inset is load-bearing**: without it, the gold fill paints over the label's own black border stroke at the top corners, since SVG strokes are centered on the path. Keep at least this margin if the stripe or label size ever changes. |
 | Label "text line" dashes | `#a39d8c` | Decorative, suggest handwritten label text. |
-| Corner rivet notches | `#2a2a2e` | Sit on the disk **body's** own bottom edge (`x=2` / `x=74` in the 80-unit grid), **outside** the label's horizontal range (`x=8` to `x=72`). This was a real bug: they originally overlapped the label's bottom corners, making the label look cut into. Any future detail added near the bottom corners must stay clear of the label's x-range for the same reason. |
+| Corner rivet notches | `#E2554C` (studio red) | Sit on the disk **body's** own bottom edge (`x=2` / `x=74` in the 80-unit grid), **outside** the label's horizontal range (`x=8` to `x=72`). Originally `#2a2a2e` (dark gray, blending into the body); recolored to the studio's red accent once the gold+red brand decision was made (see "Color decision" section below) — a small, deliberate way to carry the studio's second color into the logo itself without touching the gold stripe. Also: this was a real bug when the notches were gray — they originally overlapped the label's bottom corners, making the label look cut into. Any future detail added near the bottom corners must stay clear of the label's x-range for the same reason. |
 
 - No gradients, no glow, no 3D shading in the shipped version — flat
   color blocks only. This is a deliberate end state, not a placeholder:

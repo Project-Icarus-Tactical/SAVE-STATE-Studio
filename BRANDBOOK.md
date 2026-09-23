@@ -53,10 +53,19 @@ two colors). Reuse this exact pattern for any future divider/underline
 that needs to read as "Save State Studio".
 
 **Red stays an accent, never a surface.** Use it for a small mark, an
-icon fill, or one half of the accent bar — never a background, never
-body text, never more than one or two elements per screen. It's meant
-to read as "this studio is a little different/edgier than the polished
-product brand", not as an alarm/error color.
+icon fill, one half of the accent bar, or a tiny logo detail — never a
+background, never body text, never more than one or two elements per
+screen. It's meant to read as "this studio is a little different/edgier
+than the polished product brand", not as an alarm/error color.
+
+**Red now appears in the logo itself, in one spot only**: the pixel
+floppy disk's two corner rivet notches (previously dark gray) are red.
+The gold label stripe is untouched — that substitution (gold instead of
+the generic red stripe real floppy icons have) stays as-is; the rivets
+were a separate, smaller opportunity to carry the studio's red into the
+mark itself without undoing that original choice. Don't extend red to
+any other part of the icon without checking first — see `CLAUDE.md`'s
+logo History section for the full reasoning.
 
 ## Typography
 
@@ -111,10 +120,12 @@ rules for anyone just placing the logo, not redrawing it:
   `assets/logo/logo-footer.svg` for compact inline placements (nav
   bars, footers), `assets/logo/icon-only.svg` for favicons/app icons
   where no wordmark fits.
-- Never recolor the icon itself (the gold label stripe is a deliberate
-  brand substitution for the generic red stripe real floppy-disk icons
-  usually have — see `CLAUDE.md` History item 7). The studio's red
-  accent lives elsewhere on the page, not on the icon.
+- Don't recolor the label stripe (stays gold — a deliberate brand
+  substitution for the generic red stripe real floppy-disk icons
+  usually have, see `CLAUDE.md` History item 7). The corner rivet
+  notches are the one part of the icon that does carry the studio's
+  red accent; don't extend red beyond that single detail without
+  checking first.
 
 ## Where this is used
 
