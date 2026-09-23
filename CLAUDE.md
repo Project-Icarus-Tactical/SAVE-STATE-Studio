@@ -46,37 +46,43 @@ app. Built as a single static `index.html`, no server dependency.
   deliberately not merged, same split as `APEX-LIFTER`'s own CLAUDE.md
   vs. its Obsidian Brandbook.md.
 
-### Color decision: violet + red + gold, not gold-only
+### Color decision: gold + red, explicitly NOT violet
 
-Explicit ask, spoken alongside the website request: the studio's colors
-should be **Apex Lifter's own violet (`#D6BBF7`) plus red plus gold
-(`#E2C766`)** — a third color beyond the icon's existing gold. This
-directly contradicts Apex Lifter's own brand rule ("no red anywhere,
-even for destructive actions" — see that repo's CLAUDE.md); that's
-fine and deliberate, since Save State Studio is a **separate** brand
-from its first product, allowed to make different choices. Picked
-`#E2554C` for red (provisional — the founder separately flagged that
-even the *font* choice might still change, so treat every color/type
-decision here as revisit-if-it-doesn't-feel-right, not locked-in).
+Explicit ask, spoken alongside the website request: **`#E2C766` gold +
+a new red only.** A first pass at this section (and the first cut of
+`index.html`/`BRANDBOOK.md`) mistakenly added Apex Lifter's violet
+(`#D6BBF7`) as a third studio color — **wrong, corrected same-day**.
+The actual instruction: violet + gold is Apex Lifter's own brand, and
+Save State Studio needs to look clearly different from the app it
+ships, not share a palette with it. Violet must never appear in the
+studio's own chrome (nav, buttons, section labels, accent bar) —
+reusing it would defeat the entire point of having a distinct studio
+identity. Picked `#E2554C` for red (provisional — the founder
+separately flagged that even the *font* choice might still change, so
+treat every color/type decision here as revisit-if-it-doesn't-feel-
+right, not locked-in).
 
 - **Red never touches the logo icon itself** — the icon's gold label
   stripe is a deliberate brand substitution for the generic red stripe
   real floppy-disk icons usually have (History item 7 below); reusing
   red there would undo that specific choice. Red lives only in
-  page-level accents: the tri-color bar, one icon fill on the
-  "Prinzipien" cards, nothing else per the current design.
-- **The tri-color accent bar** (`.accent-bar` in `index.html`) is a new
-  signature motif: one bar, hard-split into three equal gold/violet/red
-  segments — same "hard split, not a blended gradient" convention Apex
-  Lifter itself uses for its gold→violet lockup (see that repo's
-  CLAUDE.md Brand section). Reuse this exact pattern for future
-  dividers/underlines that need to read as "Save State Studio".
-- **Known inconsistency, not yet resolved**: the `SAVE-STATE-social`
-  kit (LinkedIn/Instagram launch assets) was built *before* this color
-  decision and currently uses only gold + gray, no violet or red — see
-  that repo's own README/commit. Flagged in `BRANDBOOK.md`; revisit
-  those images if the two should match exactly, but nothing has been
-  redone there yet since it wasn't asked for.
+  page-level accents: half the accent bar, one icon fill on the
+  "Prinzipien" cards, the Games-Backlog-Tracker project icon.
+- **The accent bar** (`.accent-bar` in `index.html`) is the studio's
+  signature motif: one bar, hard-split 50/50 gold/red — same "hard
+  split, not a blended gradient" convention Apex Lifter itself uses for
+  its own gold→violet lockup (see that repo's CLAUDE.md Brand section),
+  just with the studio's own two colors instead.
+- **The Apex Lifter project-card icon is intentionally gold-only now**,
+  not gold+violet — an earlier version echoed Apex Lifter's own
+  gold/violet duotone on its mini mountain-peak icon inside the
+  "Projekte" section, which was removed for the same reason as
+  everywhere else: no violet on this site, full stop, even when the
+  icon is *depicting* a violet-branded product.
+- **`SAVE-STATE-social`** (LinkedIn/Instagram launch assets, separate
+  repo) predates the red accent entirely and currently uses only gold +
+  gray — no violet, so it was never wrong, just missing red. Add red
+  there too if it's ever revisited; nothing needs undoing.
 
 Name origin: "Save State" is the gaming term for a save-point/snapshot —
 deliberate, since the user described himself (unprompted, while

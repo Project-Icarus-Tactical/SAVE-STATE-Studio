@@ -18,28 +18,36 @@ whenever the name itself needs explaining in copy.
 
 ## Colors
 
+**Gold + red only — no violet.** Explicit, deliberate call: violet +
+gold is Apex Lifter's own brand. Save State Studio needs a clean,
+immediately recognizable difference from the app it ships, not a
+shared palette — so violet is reserved for Apex Lifter (and any future
+per-project branding that wants to borrow it), and never appears in the
+studio's own chrome (nav, buttons, section labels, accent bar). An
+earlier draft of this file used gold + violet + red; that was a
+misread of the instruction and has been corrected. If violet ever shows
+up in a Save State Studio surface again, that's a bug, not a variant.
+
 | Token | Hex | Role |
 |---|---|---|
 | `--bg` | `#1C1C1E` | Primary background. Same value as the Apex Lifter app's own background — deliberate, ties studio and first product together. |
-| `--gold` | `#E2C766` | Primary accent. Same gold as Apex Lifter. Used for primary buttons, the "STUDIO" wordmark, the logo's label stripe, "Live" status badges. |
-| `--violet` | `#D6BBF7` | Secondary accent. Same violet as Apex Lifter. Used for secondary icon fills, "In Konzeption"/concept-stage badges, section eyebrows. |
-| `--red` | `#E2554C` | Tertiary accent, **studio-only**. Apex Lifter's own brand explicitly avoids red everywhere (see that repo's CLAUDE.md); Save State Studio is a distinct brand and deliberately uses a warm red as its third signature color, always in the tri-color accent bar and sparingly elsewhere. Provisional exact hex — revisit if it fights the gold/violet pairing in practice. |
+| `--gold` | `#E2C766` | Primary accent. Same gold as Apex Lifter (the one color deliberately shared — see the logo's History note on why the label stripe is gold, not the generic red). Used for primary buttons, the "STUDIO" wordmark, the logo's label stripe, "Live" status badges. |
+| `--red` | `#E2554C` | Secondary accent, **studio-only**. Apex Lifter's own brand explicitly avoids red everywhere (see that repo's CLAUDE.md); Save State Studio deliberately uses it as its own second color instead of reusing Apex Lifter's violet. Provisional exact hex — revisit if it fights gold in practice. |
 | `--text` | `#ECECEC` | Primary text on dark backgrounds. |
-| `--text-muted` | `#9a949e` | Secondary/muted text. |
+| `--text-muted` | `#9a949e` | Secondary/muted text. Also used for neutral, non-branded states (e.g. an "in progress" badge) that shouldn't claim either accent color. |
 | `--cream` | `#ece6d8` | The floppy disk icon's label color — not a general-purpose UI color, only used in/near the logo itself. |
 
-**The tri-color accent bar** (`.accent-bar` in `index.html`) is the
-studio's signature motif: a single bar, hard-split into three equal
-gold/violet/red segments (not a smooth gradient — same "hard split,
-not blended" convention Apex Lifter uses for its own gold→violet
-lockup). Reuse this exact pattern for any future divider/underline
-that needs to read as "Save State Studio", the same way Apex Lifter
-reuses its own two-color split gradient everywhere.
+**The accent bar** (`.accent-bar` in `index.html`) is the studio's
+signature motif: a single bar, hard-split 50/50 into gold and red (not
+a smooth gradient — same "hard split, not blended" convention Apex
+Lifter uses for its own gold→violet lockup, just with the studio's own
+two colors). Reuse this exact pattern for any future divider/underline
+that needs to read as "Save State Studio".
 
 **Red stays an accent, never a surface.** Use it for a small mark, an
-icon fill, or one segment of the tri-color bar — never a background,
-never body text, never more than one element per screen. It's meant to
-read as "this studio is a little different/edgier than the polished
+icon fill, or one half of the accent bar — never a background, never
+body text, never more than one or two elements per screen. It's meant
+to read as "this studio is a little different/edgier than the polished
 product brand", not as an alarm/error color.
 
 ## Typography
@@ -104,8 +112,9 @@ rules for anyone just placing the logo, not redrawing it:
 
 - `index.html` — the studio's own landing page (this repo).
 - The [apexlifter-social](https://github.com/Project-Icarus-Tactical/apexlifter-social)
-  and [SAVE-STATE-social](https://github.com/Project-Icarus-Tactical/SAVE-STATE-social)
-  kits reference this same identity, though the SAVE-STATE-social kit
-  was built before the violet/red decision above and currently uses
-  only gold + gray — revisit that kit's images if the two should be
-  brought fully in line with this brandbook.
+  kit is Apex Lifter's own (gold + violet), unaffected by any of this.
+- The [SAVE-STATE-social](https://github.com/Project-Icarus-Tactical/SAVE-STATE-social)
+  kit was built before the red accent color existed and currently uses
+  only gold + gray — no violet, so it was never wrong, just incomplete
+  next to this brandbook. Add the red accent there too if it's ever
+  revisited, but nothing needs undoing.
