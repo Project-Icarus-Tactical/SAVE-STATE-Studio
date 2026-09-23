@@ -175,3 +175,11 @@ redrawing it:
 - `apexlifter-web`'s own footer ("Made by Late Byte") pulls the compact
   icon inline — see that repo's own `i18n-strings.php`/CLAUDE.md for the
   `footer.madeBy` string in all four languages.
+- The `APEX-LIFTER` Android app now carries a subtle "Made by Late Byte"
+  credit too — a small non-nav row at the bottom of the drawer (past the
+  crash-logs item), tapping through to latebyte.ch. Uses its own
+  hand-converted `ic_late_byte_logo.xml` VectorDrawable of the current
+  chip/byte icon (flat colors, no gradient/glow — VectorDrawable doesn't
+  need it at this size) — see that repo's own `TrainingsTrackerApp.kt`
+  and CLAUDE.md for the construction. Keep this in sync manually if the
+  studio icon changes again, same as every other place it's duplicated.
