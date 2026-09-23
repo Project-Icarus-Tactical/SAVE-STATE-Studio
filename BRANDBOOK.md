@@ -18,15 +18,23 @@ whenever the name itself needs explaining in copy.
 
 ## Colors
 
-**Gold + red only — no violet.** Explicit, deliberate call: violet +
-gold is Apex Lifter's own brand. Save State Studio needs a clean,
-immediately recognizable difference from the app it ships, not a
-shared palette — so violet is reserved for Apex Lifter (and any future
-per-project branding that wants to borrow it), and never appears in the
-studio's own chrome (nav, buttons, section labels, accent bar). An
-earlier draft of this file used gold + violet + red; that was a
-misread of the instruction and has been corrected. If violet ever shows
-up in a Save State Studio surface again, that's a bug, not a variant.
+**Gold + red only — no violet in the studio's own chrome.** Explicit,
+deliberate call: violet + gold is Apex Lifter's own brand. Save State
+Studio needs a clean, immediately recognizable difference from the app
+it ships, not a shared palette — so violet never appears in the
+studio's own nav, buttons, section labels, or accent bar. An earlier
+draft of this file used gold + violet + red for the studio itself;
+that was a misread of the instruction and has been corrected.
+
+**One narrow, deliberate exception**: where the site shows a *specific
+other product's own logo/icon* (currently: the Apex Lifter mark on the
+"Projekte" card), that mark keeps the depicted product's own real
+colors — Apex Lifter's icon stays gold+violet there, because it's
+showing that product's actual identity, not the studio's. This is not
+a loophole for violet in general: any studio-level element (nav,
+buttons, badges, section labels, dividers) stays gold+red, always. If
+violet shows up anywhere on this site *other than* a specific product's
+own logo mark, that's a bug.
 
 | Token | Hex | Role |
 |---|---|---|

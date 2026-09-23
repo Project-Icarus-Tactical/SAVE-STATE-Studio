@@ -73,12 +73,17 @@ right, not locked-in).
   split, not a blended gradient" convention Apex Lifter itself uses for
   its own gold→violet lockup (see that repo's CLAUDE.md Brand section),
   just with the studio's own two colors instead.
-- **The Apex Lifter project-card icon is intentionally gold-only now**,
-  not gold+violet — an earlier version echoed Apex Lifter's own
-  gold/violet duotone on its mini mountain-peak icon inside the
-  "Projekte" section, which was removed for the same reason as
-  everywhere else: no violet on this site, full stop, even when the
-  icon is *depicting* a violet-branded product.
+- **One deliberate, narrow exception**: the Apex Lifter project-card
+  icon (the mini mountain-peak polyline inside "Projekte") keeps that
+  product's own real gold+violet duotone — it briefly got flattened to
+  gold-only during the violet cleanup, then explicitly restored
+  ("das Apex-Lifter-Logo soll exakt das Original sein, in seinen
+  Farben. Aber nur das."). The reasoning: this one icon *depicts*
+  Apex Lifter itself, a genuinely violet-branded product, so it should
+  show that product's true colors — unlike every other violet use on
+  this page, which was the *studio's own* chrome wrongly borrowing
+  Apex Lifter's palette. Don't generalize this back out to "violet is
+  okay here after all" — it's this one icon, nothing else.
 - **`SAVE-STATE-social`** (LinkedIn/Instagram launch assets, separate
   repo) predates the red accent entirely and currently uses only gold +
   gray — no violet, so it was never wrong, just missing red. Add red
