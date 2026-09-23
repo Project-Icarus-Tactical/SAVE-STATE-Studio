@@ -5,8 +5,78 @@ under which his own apps get released. First project under it: **Apex
 Lifter** (native Android gym-tracking app, separate repo
 `C:\Users\Nicola\Projects\APEX-LIFTER`, package `com.apexlifter.app`,
 domain apexlifter.app/apexlifter.ch). This repo/folder is for the studio's
-own identity (logo, brand assets, eventually a studio landing page) —
-not for any one app's code.
+own identity (logo, brand assets, studio landing page) — not for any one
+app's code.
+
+**Now a real GitHub repo** (`Project-Icarus-Tactical/SAVE-STATE-Studio`,
+GitHub repo names are case-insensitive so `save-state-studio` resolves
+the same) — the "not a git repo yet" note below is stale, left in place
+only because the History section below it still reads correctly as a
+record of how the logo evolved.
+
+## Website (`index.html`) and Brandbook (2026-09-23)
+
+Explicit ask: a landing page "vom Stil her" like `apexlifter-web`'s own
+marketing site — same dark background, same eyebrow/section-title
+rhythm, same card patterns — but **no login/backend at all** (no `api/`,
+no `konto/`, no PHP), and about the studio itself rather than any one
+app. Built as a single static `index.html`, no server dependency.
+
+- **Sections**: sticky nav (footer-lockup logo + anchor links) → hero
+  (full logo + "Vollzeit-Job tagsüber. Code nach Feierabend." + the
+  tri-color accent bar, see Brandbook) → "Über mich" (the actual
+  Feierabend/father-of-two/gamer story, in first person) → "Prinzipien"
+  (fairer Preis / keine Ads / selbst benutzt, three cards in
+  gold/violet/red) → "Projekte" (two project cards) → footer (lockup +
+  `info@savestate.ch` + link back to apexlifter.ch).
+- **Projects section currently lists two entries**:
+  - **Apex Lifter** — `status-badge live` (gold), links out to
+    apexlifter.ch, description pulled from that app's own positioning.
+  - **Games-Backlog-Tracker** — `status-badge concept` (violet), **not
+    built, not even scoped beyond the idea** noted further down this
+    file (Steam-wishlist pain point + HowLongToBeat integration to
+    estimate completion % and suggest what to finish next). Don't treat
+    its presence on the live site as a commitment to a timeline — it's
+    explicitly "in Konzeption", surfaced because the founder wanted it
+    listed, not because design/scoping has started.
+- **`BRANDBOOK.md`** is the new higher-level brand reference (colors,
+  type, voice/tone, logo-usage quick-rules) — this `CLAUDE.md` stays the
+  detailed logo-construction record (grid, exact colors, rejected
+  directions). Read both if touching brand-facing work; they're
+  deliberately not merged, same split as `APEX-LIFTER`'s own CLAUDE.md
+  vs. its Obsidian Brandbook.md.
+
+### Color decision: violet + red + gold, not gold-only
+
+Explicit ask, spoken alongside the website request: the studio's colors
+should be **Apex Lifter's own violet (`#D6BBF7`) plus red plus gold
+(`#E2C766`)** — a third color beyond the icon's existing gold. This
+directly contradicts Apex Lifter's own brand rule ("no red anywhere,
+even for destructive actions" — see that repo's CLAUDE.md); that's
+fine and deliberate, since Save State Studio is a **separate** brand
+from its first product, allowed to make different choices. Picked
+`#E2554C` for red (provisional — the founder separately flagged that
+even the *font* choice might still change, so treat every color/type
+decision here as revisit-if-it-doesn't-feel-right, not locked-in).
+
+- **Red never touches the logo icon itself** — the icon's gold label
+  stripe is a deliberate brand substitution for the generic red stripe
+  real floppy-disk icons usually have (History item 7 below); reusing
+  red there would undo that specific choice. Red lives only in
+  page-level accents: the tri-color bar, one icon fill on the
+  "Prinzipien" cards, nothing else per the current design.
+- **The tri-color accent bar** (`.accent-bar` in `index.html`) is a new
+  signature motif: one bar, hard-split into three equal gold/violet/red
+  segments — same "hard split, not a blended gradient" convention Apex
+  Lifter itself uses for its gold→violet lockup (see that repo's
+  CLAUDE.md Brand section). Reuse this exact pattern for future
+  dividers/underlines that need to read as "Save State Studio".
+- **Known inconsistency, not yet resolved**: the `SAVE-STATE-social`
+  kit (LinkedIn/Instagram launch assets) was built *before* this color
+  decision and currently uses only gold + gray, no violet or red — see
+  that repo's own README/commit. Flagged in `BRANDBOOK.md`; revisit
+  those images if the two should match exactly, but nothing has been
+  redone there yet since it wasn't asked for.
 
 Name origin: "Save State" is the gaming term for a save-point/snapshot —
 deliberate, since the user described himself (unprompted, while
