@@ -96,6 +96,55 @@
   .fact .fact-label { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
   .fact .fact-value { font-size: 15px; font-weight: 700; margin-top: 4px; }
 
+  /* ---------- coding vibe (IDE + GitHub proof-of-work) ---------- */
+  .code-windows { display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
+  .ide-window {
+    background: #18181a; border: 1px solid var(--outline); border-radius: 12px;
+    overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  }
+  .ide-titlebar {
+    display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+    background: #232326; border-bottom: 1px solid var(--outline);
+  }
+  .ide-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .ide-dot.r { background: #E2554C; }
+  .ide-dot.y { background: #E2C766; }
+  .ide-dot.g { background: #6fae6f; }
+  .ide-filename { margin-left: 8px; font-size: 12.5px; color: var(--text-muted); font-family: 'JetBrains Mono', 'Courier New', monospace; }
+  .ide-code {
+    margin: 0; padding: 18px 20px; overflow-x: auto;
+    font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.7;
+    color: #d4d4d6;
+  }
+  .ide-code .ln { display: inline-block; width: 24px; color: #55555a; user-select: none; }
+  .tok-kw { color: var(--gold); }
+  .tok-type { color: #7cb3e8; }
+  .tok-str { color: #8fc37e; }
+  .tok-com { color: #6b6b70; font-style: italic; }
+  .tok-num { color: var(--red); }
+
+  .gh-card { background: #18181a; border: 1px solid var(--outline); border-radius: 12px; overflow: hidden; margin-top: 18px; }
+  .gh-header { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--outline); }
+  .gh-header svg { color: var(--text-muted); flex-shrink: 0; }
+  .gh-repo { font-size: 13.5px; font-weight: 700; color: var(--text); font-family: 'JetBrains Mono', 'Courier New', monospace; }
+  .gh-repo .org { color: var(--text-muted); font-weight: 500; }
+  .gh-public { font-size: 10.5px; font-weight: 700; color: var(--text-muted); border: 1px solid var(--outline); border-radius: 999px; padding: 2px 9px; margin-left: 4px; }
+  .gh-commits { display: flex; flex-direction: column; }
+  .gh-commit { display: flex; align-items: baseline; gap: 12px; padding: 11px 18px; border-top: 1px solid rgba(255,255,255,0.04); font-size: 13px; }
+  .gh-commit:first-child { border-top: none; }
+  .gh-commit .msg { color: var(--text); flex: 1; }
+  .gh-commit .hash { color: var(--gold); font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 12px; }
+  .gh-commit .date { color: var(--text-muted); font-size: 12px; white-space: nowrap; }
+
+  .callout {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 14px;
+    padding: 16px 18px; margin-top: 18px;
+  }
+  .callout svg { color: var(--red); flex-shrink: 0; margin-top: 2px; }
+  .callout p { margin: 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+  .callout strong { color: var(--text); }
+
   /* ---------- principles ---------- */
   .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 28px; }
   .principle { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; }
@@ -157,6 +206,7 @@
     </a>
     <nav class="links">
       <a href="#about">Über mich</a>
+      <a href="#code">Code</a>
       <a href="#principles">Prinzipien</a>
       <a href="#projects">Projekte</a>
       <a href="#contact">Kontakt</a>
@@ -209,6 +259,80 @@
         <div class="fact"><div class="fact-label">Abends &amp; Wochenende</div><div class="fact-value">Vater von zwei Kindern, dazwischen Code</div></div>
         <div class="fact"><div class="fact-label">Herkunft des Namens</div><div class="fact-value">Save State — der Spielstand vorm nächsten Versuch</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="code">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Der Beweis</span>
+      <h2 class="section-title">Echter Code, keine Fassade</h2>
+      <p class="section-intro">Kein Marketing-Text kann zeigen, dass hier wirklich jemand programmiert — also stattdessen: echte Ausschnitte aus dem Apex-Lifter-Code und der echte Commit-Verlauf dahinter.</p>
+    </div>
+
+    <div class="code-windows">
+      <div class="ide-window">
+        <div class="ide-titlebar">
+          <span class="ide-dot r"></span><span class="ide-dot y"></span><span class="ide-dot g"></span>
+          <span class="ide-filename">OneRepMax.kt</span>
+        </div>
+        <pre class="ide-code"><span class="ln">1</span><span class="tok-com">/**
+</span><span class="ln">2</span><span class="tok-com"> * Epley-Formel. Vergleicht Sätze fair über unterschiedliche Gewicht/Wdh.-
+</span><span class="ln">3</span><span class="tok-com"> * Kombinationen — weder das schwerste Einzelgewicht noch die höchste
+</span><span class="ln">4</span><span class="tok-com"> * Wdh.-Zahl allein zeigt echte Kraft.
+</span><span class="ln">5</span><span class="tok-com"> */
+</span><span class="ln">6</span><span class="tok-kw">fun</span> estimatedOneRepMaxKg(weightKg: <span class="tok-type">Double</span>, reps: <span class="tok-type">Int</span>): <span class="tok-type">Double</span> =
+<span class="ln">7</span>    weightKg * (<span class="tok-num">1</span> + reps / <span class="tok-num">30.0</span>)</pre>
+      </div>
+
+      <div class="ide-window">
+        <div class="ide-titlebar">
+          <span class="ide-dot r"></span><span class="ide-dot y"></span><span class="ide-dot g"></span>
+          <span class="ide-filename">ActiveSessionViewModel.kt</span>
+        </div>
+        <pre class="ide-code"><span class="ln">1</span><span class="tok-com">// Nur eine echte Verbesserung feiern, nicht den allerersten
+</span><span class="ln">2</span><span class="tok-com">// jemals geloggten Satz einer Übung.
+</span><span class="ln">3</span><span class="tok-kw">val</span> isPr = priorBestOneRepMax != <span class="tok-kw">null</span> &&
+<span class="ln">4</span>    estimatedOneRepMaxKg(weightKg, reps) > priorBestOneRepMax
+<span class="ln">5</span>
+<span class="ln">6</span><span class="tok-kw">if</span> (isPr) _prSetIds.update { it + newSetId }</pre>
+      </div>
+
+      <div class="ide-window">
+        <div class="ide-titlebar">
+          <span class="ide-dot r"></span><span class="ide-dot y"></span><span class="ide-dot g"></span>
+          <span class="ide-filename">ExerciseMood.kt</span>
+        </div>
+        <pre class="ide-code"><span class="ln">1</span><span class="tok-kw">enum class</span> <span class="tok-type">ExerciseMood</span>(<span class="tok-kw">val</span> iconRes: <span class="tok-type">Int</span>) {
+<span class="ln">2</span>    STRONG(R.drawable.ic_lucide_biceps_flexed),
+<span class="ln">3</span>    GOOD(R.drawable.ic_lucide_smile),
+<span class="ln">4</span>    OKAY(R.drawable.ic_lucide_meh),
+<span class="ln">5</span>    HARD(R.drawable.ic_lucide_frown),
+<span class="ln">6</span>    PAIN(R.drawable.ic_lucide_bandage),
+<span class="ln">7</span>    TIRED(R.drawable.ic_lucide_moon);
+<span class="ln">8</span>}</pre>
+      </div>
+    </div>
+
+    <div class="gh-card">
+      <div class="gh-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+        <span class="gh-repo"><span class="org">Project-Icarus-Tactical /</span> APEX-LIFTER</span>
+        <span class="gh-public">Public</span>
+      </div>
+      <div class="gh-commits">
+        <div class="gh-commit"><span class="hash">6367924</span><span class="msg">Add Buzz feature: motivational nudge on friend cards, shown on Dashboard</span><span class="date">22 Sep</span></div>
+        <div class="gh-commit"><span class="hash">19de112</span><span class="msg">Show the actual badge, not just the rank text, on friend cards</span><span class="date">22 Sep</span></div>
+        <div class="gh-commit"><span class="hash">3d6d79b</span><span class="msg">Add Friends screen: add by username, accept/decline, rank+streak view</span><span class="date">22 Sep</span></div>
+        <div class="gh-commit"><span class="hash">a8ba0fe</span><span class="msg">Correct wordmark fix: line stays continuous with the peak legs</span><span class="date">22 Sep</span></div>
+        <div class="gh-commit"><span class="hash">aca56d9</span><span class="msg">Add cloud sync: push/pull against apexlifter.ch/api</span><span class="date">22 Sep</span></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <p><strong>Was ist GitHub überhaupt?</strong> Der Ort, an dem jede einzelne Code-Änderung gespeichert wird — für immer nachvollziehbar, wer wann was warum geändert hat. Kein Buzzword, sondern das Werkzeug, mit dem jede ernsthafte Software entsteht. Oben siehst du echte, unveränderte Commits aus der Apex-Lifter-Entwicklung.</p>
     </div>
   </div>
 </section>
