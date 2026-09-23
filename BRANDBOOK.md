@@ -58,11 +58,11 @@ own logo mark, that's a bug.
 | Token | Hex | Role |
 |---|---|---|
 | `--bg` | `#1C1C1E` | Primary background. Same value as the Apex Lifter app's own background — deliberate, ties studio and first product together. |
-| `--gold` | `#E2C766` | Primary accent. Same gold as Apex Lifter (the one color deliberately shared). Used for primary buttons, the "STUDIO" wordmark, the moon in the logo, "Live" status badges. |
-| `--red` | `#E2554C` | Secondary accent, **studio-only**. Apex Lifter's own brand explicitly avoids red everywhere (see that repo's CLAUDE.md); Late Byte deliberately uses it as its own second color instead of reusing Apex Lifter's violet. Provisional exact hex — revisit if it fights gold in practice. |
-| `--text` | `#ECECEC` | Primary text on dark backgrounds. |
+| `--gold` | `#E2C766` | Primary accent. Same gold as Apex Lifter (the one color deliberately shared). Used for primary buttons, the "BYTE"/"STUDIO" wordmark, most of the chip icon's frame/pins/bits, "Live" status badges. |
+| `--red` | `#E2554C` | Secondary accent, **studio-only**. Apex Lifter's own brand explicitly avoids red everywhere (see that repo's CLAUDE.md); Late Byte deliberately uses it as its own second color instead of reusing Apex Lifter's violet. Also the "LATE" half of the wordmark (`#E2554C` — "late" reads as the more urgent/accented word) and the one red bit inside the chip icon. |
+| `--text` | `#ECECEC` | Primary text on dark backgrounds. **No longer used anywhere in the logo/wordmark itself** — the wordmark used to have a white "LATE", but that was dropped once the founder pointed out nothing else in the mark was white (see Colors note below and `CLAUDE.md`'s chip/byte icon section). Still fine for ordinary body copy. |
 | `--text-muted` | `#9a949e` | Secondary/muted text. Also used for neutral, non-branded states (e.g. an "in progress" badge) that shouldn't claim either accent color. |
-| `--cream` | `#ece6d8` | Historical — was the retired night-scene logo's bed/blanket color. The current minimalist crescent-moon mark doesn't use it; kept defined in `index.html` only until confirmed nothing else references it. |
+| `--cream` | `#ece6d8` | Historical only — was the retired night-scene logo's bed/blanket color. Not used by the current chip/byte mark or the intermediate crescent-moon mark; kept defined in `index.html` only until confirmed nothing else references it. |
 
 **The accent bar** (`.accent-bar` in `index.html`) is the studio's
 signature motif: a single bar, hard-split 50/50 into gold and red (not
@@ -78,15 +78,22 @@ two elements per screen. It's meant to read as "this studio is a little
 different/edgier than the polished product brand", not as an alarm/
 error color.
 
-**The current logo itself is gold-only (the crescent moon), not
-gold+red** — red lives in the wordmark ("BYTE") and the site's own UI
-accents (accent bar, badges), not inside the icon. This is a change from
-the retired night-scene mark, where gold and red were both woven into
-the scene itself (moonlight vs. the laptop screen's glow) — that
-motivated pairing doesn't apply to the current minimalist mark; don't
-try to reintroduce a second color into the moon itself without an
-explicit ask. See `CLAUDE.md`'s "Icon: minimalist crescent moon" section
-for the exact construction.
+**The current chip/byte icon is gold + one red bit** — a rounded chip
+outline with pin legs, solder pads and a pin-1 dot all in faint gold,
+containing 8 small squares (a literal byte: 8 bits) mostly gold with
+**exactly one red bit**, always at the same grid position. That single
+red square is the icon's only color break — the same "small, deliberate
+accent, never a surface" rule as everywhere else in this brandbook.
+**The wordmark's own color split changed alongside this icon**: "LATE"
+is red, "BYTE" and "STUDIO" are gold — tying "late" to the accent color
+and "byte" to the primary one. White was dropped from the wordmark
+entirely once the founder pointed out the inconsistency of a white word
+next to an icon with no white in it; if either the icon or the wordmark
+ever reintroduces white, do it in both places at once, not just one. A
+version with the chip's frame/pins/solder-pads *also* in white (keeping
+the bits gold+red) was designed and shown but explicitly not picked —
+see `CLAUDE.md`'s "Icon: chip/byte mark" section for that comparison and
+the exact construction/coordinates.
 
 ## Typography
 
@@ -99,9 +106,12 @@ file, `index.html`'s font import, and the logo SVGs together — don't
 let them drift out of sync.
 
 - Headings: weight 800, tight-ish letter-spacing.
-- The "STUDIO" half of any lockup is always weight 700 with wide
-  letter-spacing (~4-6), gold — this specific treatment is part of the
-  logo itself, not just a heading style (see `CLAUDE.md`).
+- The "STUDIO" half of any lockup is always the lighter of the two
+  wordmark weights (currently 600, vs. 700 for "LATE BYTE" above it)
+  with wide letter-spacing (~4), gold — this specific treatment is part
+  of the logo itself, not just a heading style (see `CLAUDE.md`).
+  Weights were reduced across the board from an earlier 800/700 pass per
+  direct feedback that it read too bold.
 - Body copy: weight 500-600, 15-16px, generous line-height (1.6-1.75)
   — this is a personal, story-driven site, not a dense product page.
 
@@ -133,19 +143,23 @@ let them drift out of sync.
 
 Full construction rules live in `CLAUDE.md` (shape coordinates, exact
 colors, the full history of the retired floppy-disk mark, the retired
-night-scene mark, and the current minimalist crescent moon). Quick
-rules for anyone just placing the logo, not redrawing it:
+night-scene mark, the retired minimalist crescent moon, and the current
+chip/byte mark). Quick rules for anyone just placing the logo, not
+redrawing it:
 
 - Always on the studio's dark background (`#1C1C1E`) or the slightly
   lighter card color (`#141416`) — never on a light background without
-  redesigning the wordmark's off-white color and the moon's glow first.
-- Use `assets/logo/logo-full.svg` for hero/standalone placements,
-  `assets/logo/logo-footer.svg` for compact inline placements (nav
-  bars, footers), `assets/logo/icon-only.svg` for favicons/app icons
-  where no wordmark fits.
-- The logo is now a single abstract crescent moon — no bed, no parent,
-  no laptop, no fused second symbol. See `CLAUDE.md` if asked to bring
-  an earlier mark back or to understand why it changed twice.
+  redesigning the icon's faint-gold linework (currently tuned for a dark
+  background) first.
+- Use `assets/logo/logo-full.svg` for hero/standalone placements (icon
+  on top, wordmark below), `assets/logo/logo-footer.svg` for compact
+  inline placements (nav bars, footers — icon left, wordmark right),
+  `assets/logo/icon-only.svg` for favicons/app icons where no wordmark
+  fits.
+- The icon is a chip/processor outline containing 8 small bits (one
+  red) — a literal "byte". No moon, no bed, no parent, no laptop, no
+  fused second symbol. See `CLAUDE.md` if asked to bring an earlier mark
+  back or to understand why it changed three times.
 
 ## Where this is used
 

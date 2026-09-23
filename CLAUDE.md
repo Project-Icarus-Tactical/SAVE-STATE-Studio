@@ -193,74 +193,187 @@ copies (nav, hero, footer — it doesn't reference the SVG files, it
 duplicates their markup inline for each spot) in sync manually if the
 artwork changes.
 
-- **Two lockups, not one.** "Hauptlogo" (hero use): two-line wordmark
-  centered above the scene. "Fusszeile" (footer/compact use): scene on
-  the left, two-line wordmark beside it. Both share the exact same scene
-  artwork at different scales — keep them in sync if the scene changes.
-- **Wordmark is always two lines**: "LATE BYTE" (off-white `#e8e8ea`,
-  weight 800, small letter-spacing) on top, "STUDIO" (brand gold
-  `#E2C766`, weight 700, wide letter-spacing ~4-6) below. Don't merge
-  into one line or swap which word gets the gold — gold-for-STUDIO is
-  the established accent placement, carried over unchanged from the
-  retired Save State Studio wordmark.
+- **Two lockups, not one.** "Hauptlogo" (hero use): icon on top, two-line
+  wordmark below. "Fusszeile" (footer/compact use): icon on the left,
+  two-line wordmark to its right. Both share the exact same icon artwork
+  at different scales — keep them in sync if the icon changes.
+- **Wordmark is always two lines**: "LATE BYTE" ("LATE" red `#E2554C`,
+  "BYTE" gold `#E2C766`, weight 700, small letter-spacing) on top,
+  "STUDIO" (gold `#E2C766`, weight 600, wide letter-spacing ~4) below.
+  No white anywhere in the current wordmark — see the chip/byte icon
+  section below for why that changed from the moon-mark era. Don't merge
+  into one line or change which word gets which color without checking
+  the reasoning in that section first.
 - **Font: Manrope** (Google Fonts, SIL Open Font License — cleared for
   commercial/logo use). Same font family as the Apex Lifter app itself,
   keeping studio and first-product visually related without being
   identical.
 
-### Icon: minimalist crescent moon (current, 2026-09-23)
+### Icon: chip/byte mark (current, 2026-09-23)
 
-**Third and current mark, replacing the night scene below** — a single
-abstract symbol, arrived at after the night-scene illustration (moon +
-sleeping child + coding parent) was explicitly rejected as "der falsche
-Weg" once actually built and seen at size ("das baby sieht komisch aus,
-woher kommt der kopf?... die darstellung des vater am notebook passt mir
-gar nicht"). The founder asked for "einen minimalistischeren Ansatz" —
-first tried as a single symbol *fusing* the moon with a second code-
-themed element (cursor, chevron, slash, terminal-`>`; see
-`draft4.html` in that session's scratchpad for all four), which was
-also rejected as "zu unruhig... es soll simpler, ohne billig zu wirken".
-The founder then picked variant "G" from a follow-up set of four
-moon-only variants (`draft5.html`) with the direction "nimm dein
-Favorit" — **a crescent moon alone, nothing else**: no bed, no parent,
-no laptop, no second fused element. This is deliberately the *opposite*
-direction from "make it more complex/3D" (an earlier, since-abandoned
-ask during the night-scene phase) — don't reintroduce detail or a second
-symbol into this mark without an explicit new ask; the whole point of
-this iteration was paring down, not building up.
+**Fourth and current mark, replacing the minimalist crescent moon below**
+— founder feedback on the moon-only mark: "evtl. finde ich noch ein
+besseres SVG es ist mir zu simpel" (too simple). Rather than layer more
+detail onto the moon itself, the direction pivoted entirely: a chip/
+processor icon (rounded outline + pin legs, standard IC silhouette)
+containing a grid of small squares standing in for **a literal byte** —
+8 bits, one of them red. This is the studio name spelled out visually
+("Late Byte" → a byte, drawn as 8 bits) rather than an abstract mood
+symbol, and reads as actual hardware, not just a UI icon.
+
+- **Path to this mark**: the founder linked two svgrepo.com references
+  (a duotone moon-with-"Zz"-sleep-marks icon, CC-Attribution-licensed —
+  only the *idea* was taken, the file itself was never traced or copied
+  per this project's standing stock-art caution; and a flat multicolor
+  "browser window + gear" coding illustration, CC0 but stylistically too
+  illustrative for this brand) — several fused "moon + coding element"
+  concepts were explored from those (a `</>"` bracket tucked into the
+  moon's own bite, a gear, code-line bars, a browser-window frame; see
+  that session's `draft6.html`/`draft7.html`/`draft8.html` in scratchpad)
+  before the founder said to drop the brief entirely and asked for fresh
+  proposals with no constraint. Three original directions were pitched
+  (an LB monogram-ligature, a schreibtischlampe/desk-lamp stroke, and the
+  byte-grid-in-a-chip) — **the byte-grid was the one picked outright**
+  ("das mit dem byte finde ich super"), then iterated into several
+  chip-frame variants (a 2×4 grid, a circular ring of 8 dots, a chip-with-
+  pins framing) before landing on the current one.
+- **A real counting bug was caught and fixed mid-iteration**: an early
+  chip variant only drew 6 squares (3×2), not 8 — inconsistent with "a
+  byte = 8 bits" despite looking fine visually. Caught by the founder
+  directly ("sollen wir da 8 bytes zeichnen oder nur 6"). Fixed by adding
+  a 3rd, 2-wide row at the bottom-left inside the *same* chip frame/pin
+  layout (no resize needed — there was already enough vertical room
+  between the existing 2 rows and the chip's bottom edge). **If this mark
+  is ever redrawn, count the actual squares before shipping — "looks like
+  a byte" and "is 8 elements" are not the same check.**
+- **Centering was wrong twice, both times fixed by measuring, not
+  guessing.** First: a "centered" version was actually shifted off the
+  true bounding-box center because an earlier centroid-compensation
+  shift (meant to offset the visual weight of the *missing* 9th grid
+  cell) got carried forward into a later edit by copy-paste, even after
+  the founder had already said the original (non-shifted) version looked
+  right — a straightforward bounding-box center was correct all along,
+  no compensation needed. Second, smaller-font wordmark lockups: instead
+  of estimating cap-height/line-height from the font size (which was
+  visibly wrong — "late ist oben am rand, studio hat noch platz unten"),
+  the fix was to render the SVG in a live browser tab and call
+  `getBBox()` on the actual text/icon elements to get their real
+  rendered bounds, then solve for the exact baseline `y` that centers
+  the true measured bbox against the icon's true measured center. **This
+  is the reliable method for centering SVG text against an icon in this
+  project — don't eyeball font metrics again, measure them.**
+- **Colors**: the chip frame, pin legs, solder pads, and the pin-1
+  indicator dot are all `#E2C766` gold at partial opacity (stroke
+  `opacity="0.5"`, dots `opacity="0.5"–"0.65"`) — a deliberately faint,
+  understated "hardware" line-weight, not a bold outline. The 8 bits
+  inside are flat `#E2C766` gold, alternating full-opacity and
+  `opacity="0.5"` dimmed (a loose checkerboard, not a strict pattern) for
+  visual texture, except **one bit is `#E2554C` studio red** — the one
+  deliberate color break, always at grid position row 2 / column 1
+  (`x=30,y=44` in the 100-unit icon viewBox). **A white variant (chip
+  frame + pins + STUDIO text in `#e8e8ea`, everything else unchanged) was
+  designed and shown side-by-side but explicitly not picked** ("lets go
+  mit A definitiv" — "A" being the pure gold+red version) — don't
+  reintroduce white into the chip icon itself without a fresh explicit
+  ask; the confirmed mark is strictly two colors.
+- **No gradient, no glow-filter on the bits themselves** — unlike the
+  retired moon mark's diagonal-gradient-plus-self-glow treatment, this
+  icon's 8 bits are flat fills. A gradient+glow "richer" pass was tried
+  (`goldFill`/`goldFillDim`/`redFill` linear gradients, `squareGlow`/
+  `redGlow` blur filters, a glossy top-highlight overlay, a faint
+  interior chip-body fill, a second outer halo ring) and the founder
+  liked the *direction* ("wundarbar"/wonderful) — **but this richer
+  version is not what shipped**; the confirmed, currently-live mark is
+  the flatter one from immediately before that pass (flat bits, pin-1 dot
+  + solder pads, no gradients/glow/gloss). If asked to make the icon
+  "richer"/"more 3D" again, that gradient+glow+gloss treatment already
+  exists and was well-received — reuse it rather than reinventing, but
+  confirm with the founder first since it was explicitly not the version
+  that got finalized.
+- **Ambient glow behind the whole icon is unchanged from the moon mark**
+  — same technique (radial gradient, `#E2C766` 35–45% → 0% opacity,
+  centered on the icon, roughly 1.15× the icon's own radius). This one
+  glow layer *did* carry over; it's the bits/frame's own gradient-fill-
+  plus-self-glow that didn't.
+- **Wordmark colors changed from the moon-mark convention**: "LATE" is
+  now `#E2554C` red (not white — the founder's own reasoning: "das LATE
+  soll rot sein, denn das heisst ja spät... und byte golden", i.e. tying
+  "late" to the red accent and "byte" to gold), "BYTE" and "STUDIO" are
+  both `#E2C766` gold. **White (`#e8e8ea`) no longer appears anywhere in
+  the confirmed mark** — text or icon — which resolves an inconsistency
+  the founder flagged directly: the previous "LATE" white made no sense
+  once the icon itself had no white in it ("es ist ja nirgends was
+  weiss, sonst müsste man was weisses einbauen"). If white is ever
+  reintroduced to the wordmark, it needs a matching white element in the
+  icon too, or the same inconsistency comes back.
+- **Wordmark weight was reduced**: "LATE BYTE" went from 800/700
+  (LATE-BYTE/STUDIO) down to 700/600, per direct feedback ("kann man das
+  weniger bold machen?"). A second, smaller-scale alternative (19px/9px
+  hero, 11px/6.5px footer, vs. the original 24px/11px and 14px/8px) was
+  also built and is the currently confirmed version — see the exact
+  sizes/positions in the SVG files themselves, they're the source of
+  truth, not this table.
+- **Composition, `logo-full.svg` (hero/main lockup)**: icon **on top**,
+  wordmark **below** — this is inverted from the moon-mark era, which
+  had the wordmark on top. Explicit ask ("beim hauptlogo würde ich das
+  logo oben und der text unten"). The icon sits close to the wordmark
+  (small gap, not the moon-era's generous spacing) and "STUDIO" sits
+  close under "LATE BYTE" (tight line gap) — both per direct feedback
+  asking for tighter spacing at every stage. The whole icon+text block is
+  vertically centered in the canvas via the measure-then-center method
+  above, not eyeballed margins.
+- **Composition, `logo-footer.svg` (compact/footer lockup)**: icon on the
+  left, two-line wordmark to its right, **both text lines left-aligned**
+  and the two-line block's vertical center pinned to the chip icon's own
+  vertical center (again via `getBBox()` measurement, not estimation).
+  The wordmark sits close to the icon's right edge, not with the wider
+  gap the moon-mark footer lockup used.
+- **`index.html`'s three inline copies (nav/hero/footer) and the three
+  `assets/logo/*.svg` files were all updated together** to this mark, and
+  the plain-CSS "LATE BYTE" text in the nav/footer brand-lockup (outside
+  the SVG, styled via `.brand-lockup .word`) was split into two
+  `<span>`s (`var(--red)`/`var(--gold)`) to match — there is no remaining
+  reference to the moon mark, the night-scene mark, or any of the
+  intermediate fused-symbol concepts anywhere in the shipped site.
+
+### Icon: minimalist crescent moon (retired, 2026-09-23)
+
+**Third mark, retired the same day as the fourth/current one above** —
+replaced by the chip/byte mark once the founder judged it "zu simpel"
+(too simple) after living with it briefly. Kept in full below purely as
+design history, same reasoning as the older sections further down — a
+single abstract symbol, arrived at after an even earlier night-scene
+illustration (moon + sleeping child + coding parent) was explicitly
+rejected as "der falsche Weg" once actually built and seen at size ("das
+baby sieht komisch aus, woher kommt der kopf?... die darstellung des
+vater am notebook passt mir gar nicht"). The founder asked for "einen
+minimalistischeren Ansatz" — first tried as a single symbol *fusing* the
+moon with a second code-themed element (cursor, chevron, slash,
+terminal-`>`; see `draft4.html` in that session's scratchpad for all
+four), which was also rejected as "zu unruhig... es soll simpler, ohne
+billig zu wirken". The founder then picked variant "G" from a follow-up
+set of four moon-only variants (`draft5.html`) with the direction "nimm
+dein Favorit" — **a crescent moon alone, nothing else**: no bed, no
+parent, no laptop, no second fused element.
 
 | Element | Value | Notes |
 |---|---|---|
 | Ambient glow | Radial gradient, `#E2C766` 45%→0% opacity | Centered behind the moon, `r` roughly 1.5–1.6× the moon's own radius — soft moonlight halo, not a hard-edged ring. |
-| Moon fill | Linear gradient, `#D2A233` (bottom-left) → `#F9EBC0` (top-right) (`x1=0% y1=100%` → `x2=100% y2=0%`) | A diagonal gradient, not flat gold — this is what gives the crescent visual depth/"3D-adjacent" richness without any actual shading/bevel work, addressing the earlier "sieht billig aus" line-art feedback from a different angle (richer fill instead of more elements). |
-| Moon shape | `<mask>`: white circle (`r=28`, full moon shape) minus a black circle (`r=24`, offset up-right) | **The established crescent technique for this project** — see the retired night-scene section below for why a subtractive same-background-color circle doesn't work (it paints a flat patch over the ambient glow instead of letting it show through). A `<mask>` keeps the bitten-out area genuinely transparent. |
-| Self-glow filter | `feGaussianBlur` (`stdDeviation` 1.6 at 100-unit scale, 2.2 at the larger `logo-full.svg` scale) merged with the source shape | A soft blur-and-merge behind the crisp moon itself, not just the separate ambient radial glow behind it — this is what reads as the crescent gently glowing from within, distinct from the ambient ombré wash around it. Two separate glow layers, don't collapse them into one. |
+| Moon fill | Linear gradient, `#D2A233` (bottom-left) → `#F9EBC0` (top-right) (`x1=0% y1=100%` → `x2=100% y2=0%`) | A diagonal gradient, not flat gold — this is what gave the crescent visual depth/"3D-adjacent" richness without any actual shading/bevel work. |
+| Moon shape | `<mask>`: white circle (`r=28`, full moon shape) minus a black circle (`r=24`, offset up-right) | **The established crescent technique for this project**, reusable for any future bite/crescent shape — see the retired night-scene section below for why a subtractive same-background-color circle doesn't work (it paints a flat patch over the ambient glow instead of letting it show through). A `<mask>` keeps the bitten-out area genuinely transparent. |
+| Self-glow filter | `feGaussianBlur` (`stdDeviation` 1.6 at 100-unit scale, 2.2 at the larger `logo-full.svg` scale) merged with the source shape | A soft blur-and-merge behind the crisp moon itself, not just the separate ambient radial glow behind it. |
 
-- **Exact coordinates are per-file, hand-tuned to each viewBox**, not one
-  shared number scaled uniformly — `icon-only.svg` (100×100 viewBox,
-  moon at `cx=44 cy=50 r=28`), `logo-footer.svg` (260×70 viewBox, moon at
-  `cx=35 cy=35 r=20`), `logo-full.svg` (220×260 viewBox, moon at
-  `cx=102 cy=172 r=38`). If resizing any lockup, keep the mask's second
-  (bite) circle's offset proportionally similar (~+13/-12 x/y relative to
-  the main circle's radius) rather than reusing a raw pixel offset from a
-  different-sized file.
-- **Wordmark colors are unchanged from the two-line convention above**
-  ("LATE" white `#e8e8ea`, "BYTE" red `#E2554C`, "STUDIO" gold
-  `#E2C766`) — the founder confirmed these three exact color/word
-  pairings explicitly ("aber die farben sind perfekt - bildschirm rot -
-  mond gold und dann late weiss - byte in rot und studio in gold") while
-  reviewing the (since-abandoned) night-scene draft; they carried forward
-  unchanged into this minimalist mark. Note "BYTE" red is a **new,
-  explicit split** from the wordmark's earlier single-color "LATE BYTE"
-  treatment further up this file — if touching the wordmark text, keep
-  "LATE " and "BYTE" as separate `<tspan>`s with different fills, don't
-  collapse back into one uniform-color run.
-- **`index.html`'s three inline copies (nav/hero/footer) and the three
-  `assets/logo/*.svg` files were all updated together** to this mark —
-  there is no remaining reference to the night-scene or fused-symbol
-  concepts anywhere in the shipped site. Keep them in sync manually if
-  this mark changes again (same manual-sync caveat as the "Logo" section
-  above already documents).
+- This mark's wordmark used "LATE" white `#e8e8ea`, "BYTE" red
+  `#E2554C`, "STUDIO" gold `#E2C766` — the white was dropped in the
+  chip/byte mark above specifically because it no longer matched an icon
+  with no white in it; don't reintroduce this three-color split without
+  also adding white back into whatever icon is current at the time.
+- If this mark or its `<mask>`-based crescent technique is ever needed
+  again (a future favicon variant, a nod to the studio's design history,
+  etc.), the exact per-file coordinates were: `icon-only.svg` (100×100
+  viewBox, moon at `cx=44 cy=50 r=28`), `logo-footer.svg` (260×70
+  viewBox, moon at `cx=35 cy=35 r=20`), `logo-full.svg` (220×260
+  viewBox, moon at `cx=102 cy=172 r=38`).
 
 ### Icon: night scene — moon, sleeping child, coding parent (retired, 2026-09-23)
 
@@ -413,10 +526,12 @@ arbitrarily:
 
 ## Licensing / legal status
 
-- The retired floppy-disk mark, the retired night-scene mark, and the
-  current minimalist crescent-moon mark are all original artwork — not
-  traced or derived from any stock asset (see History item 7 above for
-  the specific care taken there).
+- The retired floppy-disk mark, the retired night-scene mark, the
+  retired minimalist crescent-moon mark, and the current chip/byte mark
+  are all original artwork — not traced or derived from any stock asset
+  (see History item 7 above for the specific care taken there, and the
+  chip/byte icon section for the svgrepo.com references that inspired,
+  but were not copied into, the current mark).
 - Manrope is SIL Open Font License — fine for commercial/logo use, no
   attribution required.
 - **No trademark search or registration has been done** for either
