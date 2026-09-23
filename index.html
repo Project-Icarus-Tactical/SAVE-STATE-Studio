@@ -187,22 +187,25 @@
     <a class="brand-lockup" href="#top">
       <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="navGoldGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#E2C766" stop-opacity="0.4"/>
+          <radialGradient id="navAmbGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#E2C766" stop-opacity="0.45"/>
             <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
           </radialGradient>
+          <linearGradient id="navMoonFill" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#D2A233"/>
+            <stop offset="100%" stop-color="#F9EBC0"/>
+          </linearGradient>
           <mask id="navMoonMask">
-            <circle cx="66" cy="26" r="14" fill="white"/>
-            <circle cx="72" cy="20" r="12" fill="black"/>
+            <circle cx="44" cy="50" r="28" fill="white"/>
+            <circle cx="55" cy="38" r="24" fill="black"/>
           </mask>
+          <filter id="navMoonGlow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="1.6" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
-        <circle cx="60" cy="35" r="42" fill="url(#navGoldGlow)"/>
-        <circle cx="66" cy="26" r="14" fill="#E2C766" mask="url(#navMoonMask)"/>
-        <circle cx="24" cy="62" r="8" fill="#d8d4c8"/>
-        <rect x="10" y="68" width="60" height="18" rx="9" fill="#ece6d8"/>
-        <rect x="10" y="80" width="60" height="9" rx="4.5" fill="#d8d4c8"/>
-        <path d="M 68 88 L 71 72 L 93 72 L 96 88 Z" fill="#2a2a2e"/>
-        <path d="M 71 86 L 73 75 L 91 75 L 93 86 Z" fill="#E2554C"/>
+        <circle cx="50" cy="50" r="44" fill="url(#navAmbGlow)"/>
+        <circle cx="44" cy="50" r="28" fill="url(#navMoonFill)" mask="url(#navMoonMask)" filter="url(#navMoonGlow)"/>
       </svg>
       <span>
         <span class="word" style="display:block;">LATE BYTE</span>
@@ -224,22 +227,25 @@
   <div class="icon-wrap">
     <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="heroGoldGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#E2C766" stop-opacity="0.4"/>
+        <radialGradient id="heroAmbGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#E2C766" stop-opacity="0.45"/>
           <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
         </radialGradient>
+        <linearGradient id="heroMoonFill" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#D2A233"/>
+          <stop offset="100%" stop-color="#F9EBC0"/>
+        </linearGradient>
         <mask id="heroMoonMask">
-          <circle cx="66" cy="26" r="14" fill="white"/>
-          <circle cx="72" cy="20" r="12" fill="black"/>
+          <circle cx="44" cy="50" r="28" fill="white"/>
+          <circle cx="55" cy="38" r="24" fill="black"/>
         </mask>
+        <filter id="heroMoonGlow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="1.6" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
       </defs>
-      <circle cx="60" cy="35" r="42" fill="url(#heroGoldGlow)"/>
-      <circle cx="66" cy="26" r="14" fill="#E2C766" mask="url(#heroMoonMask)"/>
-      <circle cx="24" cy="62" r="8" fill="#d8d4c8"/>
-      <rect x="10" y="68" width="60" height="18" rx="9" fill="#ece6d8"/>
-      <rect x="10" y="80" width="60" height="9" rx="4.5" fill="#d8d4c8"/>
-      <path d="M 68 88 L 71 72 L 93 72 L 96 88 Z" fill="#2a2a2e"/>
-      <path d="M 71 86 L 73 75 L 91 75 L 93 86 Z" fill="#E2554C"/>
+      <circle cx="50" cy="50" r="44" fill="url(#heroAmbGlow)"/>
+      <circle cx="44" cy="50" r="28" fill="url(#heroMoonFill)" mask="url(#heroMoonMask)" filter="url(#heroMoonGlow)"/>
     </svg>
   </div>
   <span class="eyebrow">Late Byte</span>
@@ -417,22 +423,25 @@
     <a class="brand-lockup" href="#top" style="justify-content:center;">
       <svg width="26" height="26" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="footerGoldGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#E2C766" stop-opacity="0.4"/>
+          <radialGradient id="footerAmbGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#E2C766" stop-opacity="0.45"/>
             <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
           </radialGradient>
+          <linearGradient id="footerMoonFill" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#D2A233"/>
+            <stop offset="100%" stop-color="#F9EBC0"/>
+          </linearGradient>
           <mask id="footerMoonMask">
-            <circle cx="66" cy="26" r="14" fill="white"/>
-            <circle cx="72" cy="20" r="12" fill="black"/>
+            <circle cx="44" cy="50" r="28" fill="white"/>
+            <circle cx="55" cy="38" r="24" fill="black"/>
           </mask>
+          <filter id="footerMoonGlow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="1.6" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
-        <circle cx="60" cy="35" r="42" fill="url(#footerGoldGlow)"/>
-        <circle cx="66" cy="26" r="14" fill="#E2C766" mask="url(#footerMoonMask)"/>
-        <circle cx="24" cy="62" r="8" fill="#d8d4c8"/>
-        <rect x="10" y="68" width="60" height="18" rx="9" fill="#ece6d8"/>
-        <rect x="10" y="80" width="60" height="9" rx="4.5" fill="#d8d4c8"/>
-        <path d="M 68 88 L 71 72 L 93 72 L 96 88 Z" fill="#2a2a2e"/>
-        <path d="M 71 86 L 73 75 L 91 75 L 93 86 Z" fill="#E2554C"/>
+        <circle cx="50" cy="50" r="44" fill="url(#footerAmbGlow)"/>
+        <circle cx="44" cy="50" r="28" fill="url(#footerMoonFill)" mask="url(#footerMoonMask)" filter="url(#footerMoonGlow)"/>
       </svg>
       <span>
         <span class="word" style="display:block;">LATE BYTE</span>

@@ -1,50 +1,29 @@
-<svg viewBox="0 0 320 290" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
   <title>Late Byte</title>
   <defs>
-    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#E2C766" stop-opacity="0.35"/>
+    <radialGradient id="ambGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E2C766" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#E2554C" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#E2554C" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="moonFill" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D2A233"/>
+      <stop offset="100%" stop-color="#F9EBC0"/>
+    </linearGradient>
     <mask id="moonMask">
-      <circle cx="222" cy="28" r="20" fill="white"/>
-      <circle cx="230" cy="21" r="17" fill="black"/>
+      <circle cx="102" cy="172" r="38" fill="white"/>
+      <circle cx="117" cy="156" r="32" fill="black"/>
     </mask>
+    <filter id="moonGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
-  <text x="160" y="34" font-family="'Manrope', sans-serif" font-size="26" font-weight="800" fill="#e8e8ea" text-anchor="middle" letter-spacing="1">LATE BYTE</text>
-  <text x="160" y="58" font-family="'Manrope', sans-serif" font-size="15" font-weight="700" fill="#E2C766" text-anchor="middle" letter-spacing="6">STUDIO</text>
+  <text x="110" y="42" font-family="'Manrope', sans-serif" font-size="30" font-weight="800" text-anchor="middle" letter-spacing="1">
+    <tspan fill="#e8e8ea">LATE </tspan><tspan fill="#E2554C">BYTE</tspan>
+  </text>
+  <text x="110" y="68" font-family="'Manrope', sans-serif" font-size="13" font-weight="700" fill="#E2C766" text-anchor="middle" letter-spacing="6">STUDIO</text>
 
-  <g transform="translate(20, 78)">
-    <!-- ambient glows: gold moonlight over the sleeping child, red screen-glow over the coding dad -->
-    <circle cx="215" cy="45" r="95" fill="url(#goldGlow)"/>
-    <circle cx="205" cy="120" r="65" fill="url(#redGlow)"/>
-
-    <!-- stars -->
-    <circle cx="150" cy="10" r="1.8" fill="#E2C766" opacity="0.8"/>
-    <circle cx="245" cy="8" r="1.4" fill="#E2C766" opacity="0.6"/>
-    <circle cx="272" cy="32" r="1.8" fill="#E2C766" opacity="0.7"/>
-    <circle cx="130" cy="28" r="1.3" fill="#E2C766" opacity="0.5"/>
-    <circle cx="258" cy="58" r="1.3" fill="#E2C766" opacity="0.5"/>
-
-    <!-- crescent moon (masked, so the glow shows through the bite rather than a flat patch) -->
-    <circle cx="222" cy="28" r="20" fill="#E2C766" mask="url(#moonMask)"/>
-
-    <!-- bed, bottom-left: child asleep -->
-    <rect x="8" y="72" width="12" height="60" rx="4" fill="#a39d8c"/>
-    <ellipse cx="44" cy="98" rx="22" ry="11" fill="#fbf8f0"/>
-    <circle cx="40" cy="90" r="13" fill="#d8d4c8"/>
-    <rect x="10" y="104" width="106" height="32" rx="15" fill="#ece6d8"/>
-    <rect x="10" y="122" width="106" height="16" rx="8" fill="#d8d4c8"/>
-
-    <!-- dad at laptop, bottom-right: still coding -->
-    <rect x="176" y="98" width="38" height="44" rx="16" fill="#3a3a40"/>
-    <circle cx="195" cy="86" r="14" fill="#3a3a40"/>
-    <rect x="188" y="140" width="80" height="7" rx="3.5" fill="#2a2a2e"/>
-    <path d="M 214 140 L 217 106 L 257 106 L 260 140 Z" fill="#2a2a2e"/>
-    <path d="M 218 137 L 220 110 L 254 110 L 256 137 Z" fill="#E2554C"/>
-  </g>
+  <circle cx="110" cy="172" r="60" fill="url(#ambGlow)"/>
+  <circle cx="102" cy="172" r="38" fill="url(#moonFill)" mask="url(#moonMask)" filter="url(#moonGlow)"/>
 </svg>

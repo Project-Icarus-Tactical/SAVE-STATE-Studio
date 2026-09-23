@@ -208,12 +208,69 @@ artwork changes.
   keeping studio and first-product visually related without being
   identical.
 
-### Icon: night scene — moon, sleeping child, coding parent
+### Icon: minimalist crescent moon (current, 2026-09-23)
 
-**Current direction (2026-09-23), replacing the floppy disk entirely**
-(see "Save State Studio — retired name" below for that mark's full
-history) — a flat-color illustrated scene directly depicting the
-studio's own story, drawn from the founder's own description: "ein
+**Third and current mark, replacing the night scene below** — a single
+abstract symbol, arrived at after the night-scene illustration (moon +
+sleeping child + coding parent) was explicitly rejected as "der falsche
+Weg" once actually built and seen at size ("das baby sieht komisch aus,
+woher kommt der kopf?... die darstellung des vater am notebook passt mir
+gar nicht"). The founder asked for "einen minimalistischeren Ansatz" —
+first tried as a single symbol *fusing* the moon with a second code-
+themed element (cursor, chevron, slash, terminal-`>`; see
+`draft4.html` in that session's scratchpad for all four), which was
+also rejected as "zu unruhig... es soll simpler, ohne billig zu wirken".
+The founder then picked variant "G" from a follow-up set of four
+moon-only variants (`draft5.html`) with the direction "nimm dein
+Favorit" — **a crescent moon alone, nothing else**: no bed, no parent,
+no laptop, no second fused element. This is deliberately the *opposite*
+direction from "make it more complex/3D" (an earlier, since-abandoned
+ask during the night-scene phase) — don't reintroduce detail or a second
+symbol into this mark without an explicit new ask; the whole point of
+this iteration was paring down, not building up.
+
+| Element | Value | Notes |
+|---|---|---|
+| Ambient glow | Radial gradient, `#E2C766` 45%→0% opacity | Centered behind the moon, `r` roughly 1.5–1.6× the moon's own radius — soft moonlight halo, not a hard-edged ring. |
+| Moon fill | Linear gradient, `#D2A233` (bottom-left) → `#F9EBC0` (top-right) (`x1=0% y1=100%` → `x2=100% y2=0%`) | A diagonal gradient, not flat gold — this is what gives the crescent visual depth/"3D-adjacent" richness without any actual shading/bevel work, addressing the earlier "sieht billig aus" line-art feedback from a different angle (richer fill instead of more elements). |
+| Moon shape | `<mask>`: white circle (`r=28`, full moon shape) minus a black circle (`r=24`, offset up-right) | **The established crescent technique for this project** — see the retired night-scene section below for why a subtractive same-background-color circle doesn't work (it paints a flat patch over the ambient glow instead of letting it show through). A `<mask>` keeps the bitten-out area genuinely transparent. |
+| Self-glow filter | `feGaussianBlur` (`stdDeviation` 1.6 at 100-unit scale, 2.2 at the larger `logo-full.svg` scale) merged with the source shape | A soft blur-and-merge behind the crisp moon itself, not just the separate ambient radial glow behind it — this is what reads as the crescent gently glowing from within, distinct from the ambient ombré wash around it. Two separate glow layers, don't collapse them into one. |
+
+- **Exact coordinates are per-file, hand-tuned to each viewBox**, not one
+  shared number scaled uniformly — `icon-only.svg` (100×100 viewBox,
+  moon at `cx=44 cy=50 r=28`), `logo-footer.svg` (260×70 viewBox, moon at
+  `cx=35 cy=35 r=20`), `logo-full.svg` (220×260 viewBox, moon at
+  `cx=102 cy=172 r=38`). If resizing any lockup, keep the mask's second
+  (bite) circle's offset proportionally similar (~+13/-12 x/y relative to
+  the main circle's radius) rather than reusing a raw pixel offset from a
+  different-sized file.
+- **Wordmark colors are unchanged from the two-line convention above**
+  ("LATE" white `#e8e8ea`, "BYTE" red `#E2554C`, "STUDIO" gold
+  `#E2C766`) — the founder confirmed these three exact color/word
+  pairings explicitly ("aber die farben sind perfekt - bildschirm rot -
+  mond gold und dann late weiss - byte in rot und studio in gold") while
+  reviewing the (since-abandoned) night-scene draft; they carried forward
+  unchanged into this minimalist mark. Note "BYTE" red is a **new,
+  explicit split** from the wordmark's earlier single-color "LATE BYTE"
+  treatment further up this file — if touching the wordmark text, keep
+  "LATE " and "BYTE" as separate `<tspan>`s with different fills, don't
+  collapse back into one uniform-color run.
+- **`index.html`'s three inline copies (nav/hero/footer) and the three
+  `assets/logo/*.svg` files were all updated together** to this mark —
+  there is no remaining reference to the night-scene or fused-symbol
+  concepts anywhere in the shipped site. Keep them in sync manually if
+  this mark changes again (same manual-sync caveat as the "Logo" section
+  above already documents).
+
+### Icon: night scene — moon, sleeping child, coding parent (retired, 2026-09-23)
+
+**Second mark, retired the same day it was built** — replaced by the
+minimalist crescent moon above almost immediately after this direction
+was actually seen at real size (not rejected on the concept, but on the
+execution — see the rejection quotes in the section above). Kept in full
+below purely as design history, same reasoning as the floppy-disk
+section further down — a flat-color illustrated scene directly depicting
+the studio's own story, drawn from the founder's own description: "ein
 Mond, daneben Kind im Bett und Vater am Laptop am Coden." Built as plain
 `<circle>`/`<rect>`/`<path>` shapes (no `<img>`, no external assets), so
 it stays crisp at any size and matches the existing "hand-authored SVG,
@@ -349,13 +406,17 @@ arbitrarily:
    notches overlapping the label's edge, and the gold stripe bleeding
    over the label's border stroke.
 9. **Retired entirely (2026-09-23)** in favor of the night-scene icon
-   documented above, per the founder's own logo concept.
+   documented above, per the founder's own logo concept — which was
+   itself retired the same day in favor of the current minimalist
+   crescent moon (see that section above); this floppy disk was never
+   actually live on the shipped site.
 
 ## Licensing / legal status
 
-- Both the retired floppy-disk mark and the current night-scene mark are
-  original artwork — not traced or derived from any stock asset (see
-  History item 7 above for the specific care taken there).
+- The retired floppy-disk mark, the retired night-scene mark, and the
+  current minimalist crescent-moon mark are all original artwork — not
+  traced or derived from any stock asset (see History item 7 above for
+  the specific care taken there).
 - Manrope is SIL Open Font License — fine for commercial/logo use, no
   attribution required.
 - **No trademark search or registration has been done** for either

@@ -62,7 +62,7 @@ own logo mark, that's a bug.
 | `--red` | `#E2554C` | Secondary accent, **studio-only**. Apex Lifter's own brand explicitly avoids red everywhere (see that repo's CLAUDE.md); Late Byte deliberately uses it as its own second color instead of reusing Apex Lifter's violet. Provisional exact hex — revisit if it fights gold in practice. |
 | `--text` | `#ECECEC` | Primary text on dark backgrounds. |
 | `--text-muted` | `#9a949e` | Secondary/muted text. Also used for neutral, non-branded states (e.g. an "in progress" badge) that shouldn't claim either accent color. |
-| `--cream` | `#ece6d8` | The logo's bed/blanket color — not a general-purpose UI color, only used in/near the logo itself. |
+| `--cream` | `#ece6d8` | Historical — was the retired night-scene logo's bed/blanket color. The current minimalist crescent-moon mark doesn't use it; kept defined in `index.html` only until confirmed nothing else references it. |
 
 **The accent bar** (`.accent-bar` in `index.html`) is the studio's
 signature motif: a single bar, hard-split 50/50 into gold and red (not
@@ -72,18 +72,21 @@ two colors). Reuse this exact pattern for any future divider/underline
 that needs to read as "Late Byte".
 
 **Red stays an accent, never a surface.** Use it for a small mark, an
-icon fill, one half of the accent bar, or the laptop-screen glow in the
-logo — never a background, never body text, never more than one or two
-elements per screen. It's meant to read as "this studio is a little
+icon fill, one half of the accent bar, or the "BYTE" half of the
+wordmark — never a background, never body text, never more than one or
+two elements per screen. It's meant to read as "this studio is a little
 different/edgier than the polished product brand", not as an alarm/
 error color.
 
-**The two accent colors are woven into the logo's own story, not just
-applied as decoration**: gold is the moon's light over the sleeping
-child, red is the laptop screen's glow on the still-coding parent. Keep
-that pairing (gold = rest/moonlight, red = the screen glow) if the scene
-is ever redrawn or extended — it's what makes the color choice feel
-motivated rather than arbitrary.
+**The current logo itself is gold-only (the crescent moon), not
+gold+red** — red lives in the wordmark ("BYTE") and the site's own UI
+accents (accent bar, badges), not inside the icon. This is a change from
+the retired night-scene mark, where gold and red were both woven into
+the scene itself (moonlight vs. the laptop screen's glow) — that
+motivated pairing doesn't apply to the current minimalist mark; don't
+try to reintroduce a second color into the moon itself without an
+explicit ask. See `CLAUDE.md`'s "Icon: minimalist crescent moon" section
+for the exact construction.
 
 ## Typography
 
@@ -129,9 +132,9 @@ let them drift out of sync.
 ## Logo usage
 
 Full construction rules live in `CLAUDE.md` (shape coordinates, exact
-colors, the full history of both the retired floppy-disk mark and the
-current scene). Quick rules for anyone just placing the logo, not
-redrawing it:
+colors, the full history of the retired floppy-disk mark, the retired
+night-scene mark, and the current minimalist crescent moon). Quick
+rules for anyone just placing the logo, not redrawing it:
 
 - Always on the studio's dark background (`#1C1C1E`) or the slightly
   lighter card color (`#141416`) — never on a light background without
@@ -140,9 +143,9 @@ redrawing it:
   `assets/logo/logo-footer.svg` for compact inline placements (nav
   bars, footers), `assets/logo/icon-only.svg` for favicons/app icons
   where no wordmark fits.
-- The scene (moon, sleeping child in bed, parent at a glowing laptop)
-  is the logo now, not a floppy disk — see `CLAUDE.md` if asked to
-  bring the old mark back or to understand why it changed.
+- The logo is now a single abstract crescent moon — no bed, no parent,
+  no laptop, no fused second symbol. See `CLAUDE.md` if asked to bring
+  an earlier mark back or to understand why it changed twice.
 
 ## Where this is used
 
