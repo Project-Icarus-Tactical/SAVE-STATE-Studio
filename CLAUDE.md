@@ -61,15 +61,15 @@ and icon changed.
   studio chrome, except a depicted product's own logo mark" exception.
   All of that is still accurate as originally documented and carries over
   unchanged — see `BRANDBOOK.md`.
-- **Known gap, not yet addressed**: the separate
+- **Resolved (2026-09-23, same day as the chip/byte icon pivot below)**:
+  the separate
   [SAVE-STATE-social](https://github.com/Project-Icarus-Tactical/SAVE-STATE-social)
-  repo (LinkedIn/Instagram launch kit) still uses the old name and the
-  old floppy-disk icon in its generated images. It was **not** renamed
-  or regenerated as part of this pass — that would mean rebuilding all
-  of its image assets from scratch, which wasn't asked for. Flag this to
-  the founder before that kit is actually used to set up real social
-  accounts; either regenerate it under "Late Byte" first, or treat it as
-  abandoned in favor of a fresh kit later.
+  repo (LinkedIn/Instagram launch kit) was fully rebranded — name, domain
+  references, and all 6 image assets rebuilt around the current chip/byte
+  icon and gold+red palette. See that repo's own README.md; its accounts
+  still haven't actually been created yet (savestate.ch → latebyte.ch
+  domain/email setup is a prerequisite, per the kit's own "Setup" section),
+  only the kit's content and assets are current now.
 
 ## Website (`index.html`) and Brandbook
 
@@ -175,10 +175,8 @@ the Save State Studio → Late Byte rename unchanged.
   Apex Lifter's palette. Don't generalize this back out to "violet is
   okay here after all" — it's this one icon, nothing else.
 - **`SAVE-STATE-social`** (LinkedIn/Instagram launch assets, separate
-  repo) predates the red accent entirely and currently uses only gold +
-  gray — no violet, so it was never wrong on the color question, just
-  incomplete next to this brandbook. It's now also out of date on the
-  *name* — see the Rename section above.
+  repo) now uses the same gold+red chip/byte icon as this repo — rebuilt
+  2026-09-23, see the Rename section above.
 
 ## Logo
 

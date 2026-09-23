@@ -167,11 +167,10 @@ redrawing it:
 - The [apexlifter-social](https://github.com/Project-Icarus-Tactical/apexlifter-social)
   kit is Apex Lifter's own (gold + violet), unaffected by any of this.
 - The [SAVE-STATE-social](https://github.com/Project-Icarus-Tactical/SAVE-STATE-social)
-  kit still carries the **old** name and floppy-disk logo as of this
-  writing — it was not renamed alongside this repo (not asked for, and
-  would need its images regenerated from scratch). Flag this to the
-  founder before publishing anything from that kit; either rename it to
-  match or treat it as retired/superseded.
+  kit (LinkedIn/Instagram launch materials) is fully rebranded as of
+  2026-09-23 — same name, same chip/byte icon, same gold+red palette as
+  this repo. Its accounts haven't actually been created yet; that's a
+  separate step (see its own README.md/`index.html` "Setup" section).
 - `apexlifter-web`'s own footer ("Made by Late Byte") pulls the compact
   icon inline — see that repo's own `i18n-strings.php`/CLAUDE.md for the
   `footer.madeBy` string in all four languages.
