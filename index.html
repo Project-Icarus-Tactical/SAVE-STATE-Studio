@@ -400,11 +400,21 @@
     <div class="projects">
       <div class="project-card">
         <div class="project-mark">
-          <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg width="34" height="34" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
             <!-- Exception to this page's gold+red-only rule: this icon depicts Apex Lifter
-                 itself, so it keeps that product's own real gold+violet brand colors. -->
-            <polyline points="10,80 35,40 50,60 65,25 90,80" fill="none" stroke="#E2C766" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="10,80 35,40 50,60 65,25 90,80" fill="none" stroke="#D6BBF7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60 200" stroke-dashoffset="-140"/>
+                 itself, so it's the app's own real logo (peak + barbell), not redrawn. -->
+            <defs>
+              <linearGradient id="apexPeakGrad" x1="54" y1="30.6" x2="54" y2="77.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#E2C766"/>
+                <stop offset="0.4" stop-color="#E2C766"/>
+                <stop offset="0.4" stop-color="#D6BBF7"/>
+                <stop offset="1" stop-color="#D6BBF7"/>
+              </linearGradient>
+            </defs>
+            <path d="M 21.6,52.2 L 86.4,52.2" stroke="#e8e8ea" stroke-width="5.04" stroke-linecap="round"/>
+            <path d="M 30.96,42.84 L 30.96,61.56 M 25.2,47.16 L 25.2,57.24" stroke="#e8e8ea" stroke-width="4.32" stroke-linecap="round"/>
+            <path d="M 77.04,42.84 L 77.04,61.56 M 82.8,47.16 L 82.8,57.24" stroke="#e8e8ea" stroke-width="4.32" stroke-linecap="round"/>
+            <path d="M 54,30.6 L 26.64,77.4 L 43.2,77.4 L 54,59.4 L 64.8,77.4 L 81.36,77.4" fill="none" stroke="url(#apexPeakGrad)" stroke-width="5.76" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="project-body">
