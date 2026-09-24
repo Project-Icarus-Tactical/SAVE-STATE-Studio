@@ -52,9 +52,7 @@
     border-bottom: 1px solid var(--outline);
   }
   header.site-nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 14px; }
-  .brand-lockup { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand-lockup .word { font-weight: 800; font-size: 15px; color: var(--text); line-height: 1.1; }
-  .brand-lockup .sub { font-weight: 700; font-size: 9px; color: var(--gold); letter-spacing: 0.18em; }
+  .brand-lockup { display: flex; align-items: center; text-decoration: none; }
   nav.links { display: flex; gap: 22px; }
   nav.links a { font-size: 13.5px; font-weight: 700; color: var(--text-muted); text-decoration: none; }
   nav.links a:hover { color: var(--text); }
@@ -62,11 +60,7 @@
 
   /* ---------- hero ---------- */
   .hero { padding-block: 88px 64px; text-align: center; }
-  .hero .icon-wrap { margin-bottom: 30px; }
-  .eyebrow {
-    font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--gold);
-  }
+  .hero .icon-wrap { margin-bottom: 18px; }
   h1.title { font-size: clamp(32px, 6vw, 50px); font-weight: 800; margin: 14px 0 18px; letter-spacing: 0.005em; }
   .lede { font-size: 17px; color: var(--text-muted); line-height: 1.65; max-width: 620px; margin-inline: auto; }
   .hero .accent-bar { margin-top: 36px; }
@@ -185,14 +179,62 @@
 <header class="site-nav">
   <div class="wrap">
     <a class="brand-lockup" href="#top">
-      <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <svg width="138" height="30" viewBox="0 0 240 52" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="navAmbGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#E2C766" stop-opacity="0.35"/>
             <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <circle cx="50" cy="50" r="46" fill="url(#navAmbGlow)"/>
+        <g transform="translate(6,6) scale(0.42)">
+          <circle cx="50" cy="50" r="46" fill="url(#navAmbGlow)"/>
+          <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="#E2C766" stroke-width="2" opacity="0.5"/>
+          <circle cx="26" cy="26" r="1.6" fill="#E2C766" opacity="0.65"/>
+          <g stroke="#E2C766" stroke-width="2" opacity="0.5">
+            <line x1="30" y1="12" x2="30" y2="20"/><line x1="50" y1="12" x2="50" y2="20"/><line x1="70" y1="12" x2="70" y2="20"/>
+            <line x1="30" y1="80" x2="30" y2="88"/><line x1="50" y1="80" x2="50" y2="88"/><line x1="70" y1="80" x2="70" y2="88"/>
+          </g>
+          <g fill="#E2C766" opacity="0.5">
+            <circle cx="30" cy="12" r="1.8"/><circle cx="50" cy="12" r="1.8"/><circle cx="70" cy="12" r="1.8"/>
+            <circle cx="30" cy="88" r="1.8"/><circle cx="50" cy="88" r="1.8"/><circle cx="70" cy="88" r="1.8"/>
+          </g>
+          <rect x="30" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="44" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="58" y="30" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+          <rect x="30" y="44" width="12" height="12" rx="2.5" fill="#E2554C"/>
+          <rect x="44" y="44" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+          <rect x="58" y="44" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="30" y="58" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="44" y="58" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+        </g>
+        <text x="44" y="27" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" letter-spacing="0.2">
+          <tspan fill="#E2554C">LATE </tspan><tspan fill="#E2C766">BYTE</tspan>
+        </text>
+        <text x="44" y="37" font-family="'Manrope', sans-serif" font-size="6.5" font-weight="600" fill="#E2C766" letter-spacing="2.5">STUDIO</text>
+      </svg>
+    </a>
+    <nav class="links">
+      <a href="#about">Über mich</a>
+      <a href="#code">Code</a>
+      <a href="#principles">Prinzipien</a>
+      <a href="#projects">Projekte</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+<div class="hero wrap">
+  <div class="icon-wrap">
+    <svg width="180" height="122" viewBox="0 0 200 135" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="heroAmbGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#E2C766" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g transform="translate(60,8) scale(0.8)">
+        <circle cx="50" cy="50" r="46" fill="url(#heroAmbGlow)"/>
         <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="#E2C766" stroke-width="2" opacity="0.5"/>
         <circle cx="26" cy="26" r="1.6" fill="#E2C766" opacity="0.65"/>
         <g stroke="#E2C766" stroke-width="2" opacity="0.5">
@@ -211,54 +253,13 @@
         <rect x="58" y="44" width="12" height="12" rx="2.5" fill="#E2C766"/>
         <rect x="30" y="58" width="12" height="12" rx="2.5" fill="#E2C766"/>
         <rect x="44" y="58" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
-      </svg>
-      <span>
-        <span class="word" style="display:block;"><span style="color:var(--red);">LATE </span><span style="color:var(--gold);">BYTE</span></span>
-        <span class="sub">STUDIO</span>
-      </span>
-    </a>
-    <nav class="links">
-      <a href="#about">Über mich</a>
-      <a href="#code">Code</a>
-      <a href="#principles">Prinzipien</a>
-      <a href="#projects">Projekte</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </div>
-</header>
-
-<div id="top"></div>
-<div class="hero wrap">
-  <div class="icon-wrap">
-    <svg width="72" height="72" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="heroAmbGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#E2C766" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="50" cy="50" r="46" fill="url(#heroAmbGlow)"/>
-      <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="#E2C766" stroke-width="2" opacity="0.5"/>
-      <circle cx="26" cy="26" r="1.6" fill="#E2C766" opacity="0.65"/>
-      <g stroke="#E2C766" stroke-width="2" opacity="0.5">
-        <line x1="30" y1="12" x2="30" y2="20"/><line x1="50" y1="12" x2="50" y2="20"/><line x1="70" y1="12" x2="70" y2="20"/>
-        <line x1="30" y1="80" x2="30" y2="88"/><line x1="50" y1="80" x2="50" y2="88"/><line x1="70" y1="80" x2="70" y2="88"/>
       </g>
-      <g fill="#E2C766" opacity="0.5">
-        <circle cx="30" cy="12" r="1.8"/><circle cx="50" cy="12" r="1.8"/><circle cx="70" cy="12" r="1.8"/>
-        <circle cx="30" cy="88" r="1.8"/><circle cx="50" cy="88" r="1.8"/><circle cx="70" cy="88" r="1.8"/>
-      </g>
-      <rect x="30" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
-      <rect x="44" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
-      <rect x="58" y="30" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
-      <rect x="30" y="44" width="12" height="12" rx="2.5" fill="#E2554C"/>
-      <rect x="44" y="44" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
-      <rect x="58" y="44" width="12" height="12" rx="2.5" fill="#E2C766"/>
-      <rect x="30" y="58" width="12" height="12" rx="2.5" fill="#E2C766"/>
-      <rect x="44" y="58" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+      <text x="100" y="106" font-family="'Manrope', sans-serif" font-size="19" font-weight="700" text-anchor="middle" letter-spacing="0.3">
+        <tspan fill="#E2554C">LATE </tspan><tspan fill="#E2C766">BYTE</tspan>
+      </text>
+      <text x="100" y="121" font-family="'Manrope', sans-serif" font-size="9" font-weight="600" fill="#E2C766" text-anchor="middle" letter-spacing="4">STUDIO</text>
     </svg>
   </div>
-  <span class="eyebrow">Late Byte</span>
   <h1 class="title">Vollzeit-Job tagsüber.<br>Code nach Feierabend.</h1>
   <p class="lede">Ein Ein-Personen-Indie-Studio. Keine Investoren, kein Wachstums-Zwang — nur ehrliche Apps zu einem fairen Preis, gebaut von jemandem, der sie selbst jeden Tag benutzt.</p>
   <div class="accent-bar center"></div>
@@ -441,37 +442,39 @@
 <footer class="site-footer" id="contact">
   <div class="wrap">
     <a class="brand-lockup" href="#top" style="justify-content:center;">
-      <svg width="26" height="26" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <svg width="129" height="28" viewBox="0 0 240 52" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="footerAmbGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#E2C766" stop-opacity="0.35"/>
             <stop offset="100%" stop-color="#E2C766" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <circle cx="50" cy="50" r="46" fill="url(#footerAmbGlow)"/>
-        <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="#E2C766" stroke-width="2" opacity="0.5"/>
-        <circle cx="26" cy="26" r="1.6" fill="#E2C766" opacity="0.65"/>
-        <g stroke="#E2C766" stroke-width="2" opacity="0.5">
-          <line x1="30" y1="12" x2="30" y2="20"/><line x1="50" y1="12" x2="50" y2="20"/><line x1="70" y1="12" x2="70" y2="20"/>
-          <line x1="30" y1="80" x2="30" y2="88"/><line x1="50" y1="80" x2="50" y2="88"/><line x1="70" y1="80" x2="70" y2="88"/>
+        <g transform="translate(6,6) scale(0.42)">
+          <circle cx="50" cy="50" r="46" fill="url(#footerAmbGlow)"/>
+          <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="#E2C766" stroke-width="2" opacity="0.5"/>
+          <circle cx="26" cy="26" r="1.6" fill="#E2C766" opacity="0.65"/>
+          <g stroke="#E2C766" stroke-width="2" opacity="0.5">
+            <line x1="30" y1="12" x2="30" y2="20"/><line x1="50" y1="12" x2="50" y2="20"/><line x1="70" y1="12" x2="70" y2="20"/>
+            <line x1="30" y1="80" x2="30" y2="88"/><line x1="50" y1="80" x2="50" y2="88"/><line x1="70" y1="80" x2="70" y2="88"/>
+          </g>
+          <g fill="#E2C766" opacity="0.5">
+            <circle cx="30" cy="12" r="1.8"/><circle cx="50" cy="12" r="1.8"/><circle cx="70" cy="12" r="1.8"/>
+            <circle cx="30" cy="88" r="1.8"/><circle cx="50" cy="88" r="1.8"/><circle cx="70" cy="88" r="1.8"/>
+          </g>
+          <rect x="30" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="44" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="58" y="30" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+          <rect x="30" y="44" width="12" height="12" rx="2.5" fill="#E2554C"/>
+          <rect x="44" y="44" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+          <rect x="58" y="44" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="30" y="58" width="12" height="12" rx="2.5" fill="#E2C766"/>
+          <rect x="44" y="58" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
         </g>
-        <g fill="#E2C766" opacity="0.5">
-          <circle cx="30" cy="12" r="1.8"/><circle cx="50" cy="12" r="1.8"/><circle cx="70" cy="12" r="1.8"/>
-          <circle cx="30" cy="88" r="1.8"/><circle cx="50" cy="88" r="1.8"/><circle cx="70" cy="88" r="1.8"/>
-        </g>
-        <rect x="30" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
-        <rect x="44" y="30" width="12" height="12" rx="2.5" fill="#E2C766"/>
-        <rect x="58" y="30" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
-        <rect x="30" y="44" width="12" height="12" rx="2.5" fill="#E2554C"/>
-        <rect x="44" y="44" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
-        <rect x="58" y="44" width="12" height="12" rx="2.5" fill="#E2C766"/>
-        <rect x="30" y="58" width="12" height="12" rx="2.5" fill="#E2C766"/>
-        <rect x="44" y="58" width="12" height="12" rx="2.5" fill="#E2C766" opacity="0.5"/>
+        <text x="44" y="27" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" letter-spacing="0.2">
+          <tspan fill="#E2554C">LATE </tspan><tspan fill="#E2C766">BYTE</tspan>
+        </text>
+        <text x="44" y="37" font-family="'Manrope', sans-serif" font-size="6.5" font-weight="600" fill="#E2C766" letter-spacing="2.5">STUDIO</text>
       </svg>
-      <span>
-        <span class="word" style="display:block;"><span style="color:var(--red);">LATE </span><span style="color:var(--gold);">BYTE</span></span>
-        <span class="sub">STUDIO</span>
-      </span>
     </a>
     <p class="contact">Fragen, Feedback, oder einfach Hallo sagen: <a href="mailto:info@latebyte.ch">info@latebyte.ch</a></p>
     <p class="fine">© 2026 Late Byte · Erstes Projekt: <a href="https://apexlifter.ch">Apex Lifter</a></p>
